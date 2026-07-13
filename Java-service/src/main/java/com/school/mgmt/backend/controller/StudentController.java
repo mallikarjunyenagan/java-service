@@ -17,6 +17,14 @@ public class StudentController {
     private final StudentService studentService;
     private final PdfService pdfService;
 
+    @GetMapping("/test")
+    public ResponseEntity<Map<String, String>> test() {
+        Map<String, String> responseObject = new HashMap<>();
+        responseObject.put("message", "Successfully tested!");
+        responseObject.put("status", "success");
+        return ResponseEntity.ok(responseObject);
+    }
+
     @GetMapping("/login")
     public String login() {
 
